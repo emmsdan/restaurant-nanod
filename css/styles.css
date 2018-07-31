@@ -239,6 +239,15 @@ nav h1 a:hover {
   height: 100%;
   width: 100%;
 }
+.restaurant-info{
+  width: 100%;
+}
+@media (min-width: 600px){
+  .restaurant-info{
+    width: 50%;
+    float: left;
+  }  
+}
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
