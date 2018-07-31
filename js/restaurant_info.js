@@ -24,7 +24,7 @@ initMap = () => {
       L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
         mapboxToken: 'pk.eyJ1IjoiZW1tc2RhbiIsImEiOiJjampocmJoc3gzaHloM2t0ZXk5bDdkZnRmIn0.ic9jOQF6PO2P-tTRpmaGgg',
         maxZoom: 18,
-        attribution: 'EmmsDan &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
           '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
           'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         id: 'mapbox.streets'    
@@ -70,7 +70,6 @@ fetchRestaurantFromURL = (callback) => {
         console.error(error);
         return;
       }
-      fillBreadcrumb();
       fillRestaurantHTML();
       callback(null, restaurant)
     });
@@ -149,20 +148,15 @@ fillReviewsHTML = (reviews = self.restaurant.reviews) => {
  */
 createReviewHTML = (review) => {
   const li = document.createElement('li');
-  const title = document.createElement('p');
-        title.setAttribute('class', 'title');
   const name = document.createElement('p');
-        name.setAttribute('class', 'name');
   name.innerHTML = review.name;
-  title.appendChild(name);
+  li.appendChild(name);
 
-  const date = document.createElement('span');
+  const date = document.createElement('p');
   date.innerHTML = review.date;
-  title.appendChild(date);
-  li.appendChild(title);
+  li.appendChild(date);
 
   const rating = document.createElement('p');
-  rating.setAttribute('class', 'rating');
   rating.innerHTML = `Rating: ${review.rating}`;
   li.appendChild(rating);
 
