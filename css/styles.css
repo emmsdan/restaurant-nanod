@@ -243,14 +243,11 @@ nav h1 a:hover {
   width: 100%;
   padding: 10px;
 }
-.restaurant-info #restaurant-address{
-  
-}
 @media (min-width: 600px){
   .restaurant-info{
-    width: 50%;
+    width: calc(50% - 10px);
     float: left;
-    padding: 10px;
+    padding: 30px 5px;
   }  
 }
 #restaurant-name {
@@ -268,7 +265,7 @@ nav h1 a:hover {
 	width: 100%;
 }
 #restaurant-address {
-  font-size: 12pt;
+  font: italic small-caps 900 12pt/150% Arial, Helvetica, sans-serif;
   margin: 10px 0px;
 }
 #restaurant-cuisine {
@@ -288,6 +285,11 @@ nav h1 a:hover {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 50px 20px 30px;
+}
+@media (max-width: 600px){
+  #restaurant-container {
+    padding: 90px 20px 30px;
+  }
 }
 #reviews-container {
   padding: 30px 20px 80px;
@@ -366,10 +368,13 @@ nav h1 a:hover {
   color: #fff; 
   text-align: center;
   border-radius: 2px;
-  padding: 16px; 
+  padding: 22px; 
   position: fixed;
   left: 50%; 
-  bottom: 30px;
+  top: 60px;
+  z-index: 1000;
+  box-shadow: 0 0 12px #252831;
+  visibility: hidden;
 }
 
 #snackbar.show {
