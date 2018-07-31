@@ -9,12 +9,12 @@ body,td,th,p{
 	font-size: 13px;
 	color: #333;
 	line-height: 1.5;
+  font: 16px/1.6 Arial, Helvetica, sans-serif;
 }
 body {
-	background-color: #f18200;
+	background-color: #fdfdfd;
 	margin: 0;
   position:relative;
-  max-width: 100%;
 }
 ul, li {
 	font-size: 10pt;
@@ -241,11 +241,16 @@ nav h1 a:hover {
 }
 .restaurant-info{
   width: 100%;
+  padding: 10px;
+}
+.restaurant-info #restaurant-address{
+  
 }
 @media (min-width: 600px){
   .restaurant-info{
     width: 50%;
     float: left;
+    padding: 10px;
   }  
 }
 #restaurant-name {
@@ -279,9 +284,10 @@ nav h1 a:hover {
 	width: 100%;
 }
 #restaurant-container, #reviews-container {
+  clear: both;
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 90px 20px 30px;
+  padding: 50px 20px 30px;
 }
 #reviews-container {
   padding: 30px 20px 80px;
