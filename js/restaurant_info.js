@@ -153,9 +153,12 @@ createReviewHTML = (review) => {
   title.setAttribute('class', 'title');
   name.setAttribute('class', 'name');
   name.innerHTML = review.name;
+  title.appendChild(name);
 
-  name.innerHTML = review.name;
-  li.appendChild(name);
+  const date = document.createElement('span');
+  date.innerHTML = review.date;
+  title.appendChild(date);
+  li.appendChild(title);
 
   const date = document.createElement('p');
   date.innerHTML = review.date;
