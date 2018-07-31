@@ -109,7 +109,6 @@ nav h1 a:hover {
 #map {
   height: 400px;
   width: 100%;
-  background-color: #981;
 }
 @media only screen and (min-width: 600px) {
   #map {
@@ -252,9 +251,7 @@ nav h1 a:hover {
 }
 #restaurant-name {
   color: #f18200;
-  font-family: Arial,sans-serif;
-  font-size: 20pt;
-  font-weight: 200;
+  font: 200 16pt serif;
   letter-spacing: 0;
   margin: 15px 0 30px;
   text-transform: uppercase;
