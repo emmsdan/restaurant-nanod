@@ -168,7 +168,7 @@ nav h1 a:hover {
 #restaurants-list li h1, #restaurants-list li p, #restaurants-list li a {
   padding-left: 25px;
 }
-  #restaurants-list li h1 {
+#restaurants-list li h1 {
   color: #f18200;
   font: 12pt Helvetica;
   letter-spacing: 0;
