@@ -152,7 +152,7 @@ nav h1 a:hover {
   margin: 10px;
   height: 350px;
   text-align: left;
-  width: 260px;  
+  width: 260px;
   box-sizing: content-box;
   border-radius: 29px 0;
   display: inline-block;
@@ -233,7 +233,7 @@ nav h1 a:hover {
     width: calc(50% - 10px);
     float: left;
     padding: 30px 5px;
-  }  
+  }
 }
 #restaurant-name {
   color: #f18200;
@@ -257,7 +257,7 @@ nav h1 a:hover {
   font: 300 12pt serif;
   letter-spacing: 10px;
   margin: 0 0 20px;
-  padding: 2px 0;
+  padding: 42px;
   text-align: center;
   text-transform: uppercase;
 	width: 100%;
@@ -341,15 +341,15 @@ nav h1 a:hover {
 
 /* snackbar */
 #snackbar {
-  min-width: 250px; 
+  min-width: 250px;
   margin-left: -125px;
   background-color: #ff5722;
-  color: #fff; 
+  color: #fff;
   text-align: center;
   border-radius: 2px;
-  padding: 22px; 
+  padding: 22px;
   position: fixed;
-  left: 50%; 
+  left: 50%;
   top: 60px;
   z-index: 1000;
   box-shadow: 0 0 12px #252831;
