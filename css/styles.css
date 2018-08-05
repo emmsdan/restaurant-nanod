@@ -54,7 +54,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 #footer a{
   color: #ddd;
 }
-/* ====================== Navigation ====================== */
+        /* ====================== Navigation ====================== */
 nav {
   height: 66px;
   background-color: #3397db;
@@ -63,6 +63,13 @@ nav {
 }
 nav h1 {
   margin: auto;
+}
+nav h1 a img{
+  height: 40px;
+  padding: 0 20px;
+  margin-bottom: -13px;
+  opacity: 0.5;
+  filter:grayscale(100%);
 }
 nav h1 a {
   color: #ddd;
@@ -73,7 +80,10 @@ nav h1 a {
 nav h1 a:hover {
   color: #000;
 }
-
+nav h1 a:hover img{
+  opacity: 1;
+  filter:grayscale(0);
+}
 #breadcrumb {
     padding: 10px 40px 16px;
     list-style: none;
