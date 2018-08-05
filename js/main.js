@@ -8,7 +8,6 @@ var markers = []
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */
 document.addEventListener('DOMContentLoaded', (event) => {
-  initMap(); // added
   fetchNeighborhoods();
   fetchCuisines();
 });
@@ -83,6 +82,10 @@ window.initMap = () => {
     scrollwheel: false
   });
   updateRestaurants();
+  // this helps accessibility test pass
+  google.maps.event.addListenerOnce(self.map, 'idle', () => {
+    document.getElementsByTagName('iframe')[0].title = "Google Maps";
+  });
 }
 
 /**
