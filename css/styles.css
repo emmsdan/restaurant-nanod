@@ -43,18 +43,21 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   position: relative;
 }
 #footer {
-  background-color: #444;
-  color: #aaa;
+  background-color: #3397db;
+  color: #000;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
 }
+#footer a{
+  color: #ddd;
+}
 /* ====================== Navigation ====================== */
 nav {
   height: 66px;
-  background-color: #252831;
+  background-color: #3397db;
   text-align:center;
   padding-top: 20px;
 }
@@ -68,7 +71,7 @@ nav h1 a {
   text-transform: uppercase;
 }
 nav h1 a:hover {
-  color: #f18200;
+  color: #000;
 }
 
 #breadcrumb {
