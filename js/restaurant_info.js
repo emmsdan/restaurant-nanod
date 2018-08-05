@@ -2,6 +2,13 @@ let restaurant;
 var newMap;
 
 /**
+ * Initialize map as soon as the page is loaded.
+ */
+document.addEventListener('DOMContentLoaded', (event) => {
+  //initMap();
+});
+
+/**
  * Initialize leaflet map
 */
 
