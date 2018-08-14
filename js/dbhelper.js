@@ -166,3 +166,18 @@ class DBHelper {
     return marker;
   }
 }
+
+
+/**
+ * load service worker after window has loaded
+ */
+window.addEventListener('load', ()=>{
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('serviceWorker.js')
+    .then(registration => {
+        console.log(`Welcome Home. serviceWorker started at '${registration.scope}'`);
+    }).catch(error => {
+        console.log(`serviceWorker failed to Start, with an Error: '${error}'`);
+    });
+  }
+})
