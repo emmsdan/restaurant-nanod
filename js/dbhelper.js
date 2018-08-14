@@ -180,4 +180,4 @@ window.addEventListener('load', ()=>{
         console.log(`serviceWorker failed to Start, with an Error: '${error}'`);
     });
   }
-})
+});

@@ -22,7 +22,7 @@ const staticCache = [
 ];
 /* other files to be cached */
 const cachableFiles = [
-  'https://maps.googleapis.com/maps/api/js?key=AIzaSyCgCqcp1c2SNctmhwveXIhAr-QwrU1295U&libraries=places&callback=initMap'
+  'https://maps.googleapis.com/maps/api/js?key=AIzaSyBg46mssaV7VJ1N0H9nUrasFlX76IP4rgM&libraries=places&callback=initMap'
 ]
 
 self.addEventListener('install', (event) => {
