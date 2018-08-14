@@ -147,7 +147,7 @@ createRestaurantHTML = (restaurant) => {
 
   const image = document.createElement('img');
   image.className = 'restaurant-img';
-  image.setAttribute("alt", `${restaurant.name} from ${restaurant.neighborhood}`);
+  image.setAttribute("alt", `Picture of ${restaurant.name} from ${restaurant.neighborhood}`);
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   li.append(image);
 
@@ -186,3 +186,16 @@ addMarkersToMap = (restaurants = self.restaurants) => {
   });
 }
 
+/**
+ * load service worker after window has loaded
+ */
+window.addEventListener('load', ()=>{
+  if (navigator.serviceWorker) {
+    navigator.serviceWorker.register('sw.js')
+    .then(registration => {
+        console.log(`Welcome Home. serviceWorker started at '${registration.scope}'`);
+    }).catch(error => {
+        console.log(`serviceWorker failed to Start, with an Error: '${error}'`);
+    });
+  }
+})
