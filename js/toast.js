@@ -1,20 +1,16 @@
 /* I personally love toast */
-const toast = (toast, varibles= null) =>{
-  const toastContainer = document.querySelector('.toast');
-  const toastNotification = document.querySelector('.toasted');
-  const toastButton = document.querySelector('.toastButton');
+const toast = (message, varibles= null) =>{
+  const toastBar = document.querySelector('#toast');
 
+  toastBar.classList.add('show');
+  toastBar.innerHTML = message;
   if(varibles != null) {
-    toastButton.innerHTML = `<a href='./'> Update </a>`;
+    toastBar.innerHTML += `<a href=""> Update </a>`;
+    document.querySelector('#toast a').addEventListener('click', () => {
+      toastBar.classList.remove('show');
+    })
   }
-
-  toastContainer.classList.add('show');
-  toastNotification.innerHTML = toast;
   setTimeout(()=>{
-    document.querySelector('.toast').classList.remove('show');
+    document.querySelector('#toast').classList.remove('show');
   }, 50000);
 }
-
-document.querySelector('.toast .toastButton').addEventListener('click', ()=>{
-  document.querySelector('.toast').classList.remove('show');
-})
