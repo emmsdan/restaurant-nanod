@@ -352,8 +352,8 @@ nav h1 a:hover img{
 }
 @keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
 
-/* snackbar */
-#snackbar {
+/* toast */
+#toast {
   min-width: 250px;
   margin-left: -125px;
   background-color: #ff5722;
@@ -364,29 +364,29 @@ nav h1 a:hover img{
   position: fixed;
   left: 50%;
   top: 60px;
-  z-index: 1000;
+  z-index: 10000;
   box-shadow: 0 0 12px #252831;
   visibility: hidden;
 }
 
-#snackbar.show {
+#toast.show {
   visibility: visible;
   -webkit-animation: fadein 0.5s, ease-in-out 0.5s 2.5s;
   animation: fadein 0.5s, ease-in-out 0.5s 2.5s;
 }
-#snackbar.hide{
+#toast.hide{
   display:none!important;
   visibility: hidden;
   -webkit-animation: fadein 0.5s, ease-in-out 0.5s 2.5s;
   animation: fadein 0.5s, ease-in-out 0.5s 2.5s;
 }
-#snackbar span{
+#toast span{
   background: none;
   color: #fff;
   word-wrap: break-word;
 }
-#snackbar a{
-  color: red;
+#toast a{
+  color: #000;
   text-transform: uppercase;
   float: left;
   padding: 2px;
