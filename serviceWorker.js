@@ -6,7 +6,7 @@
 
 const cacheVersion = '3.0';
 const cacheName = 'emmsdan-restaurant.io';
-const cachNameVersion= `${cacheName}-staticfy-${cacheVersion}`;
+const cachNameVersion= `${cacheName}-static-${cacheVersion}`;
 /* add most basic files to be cached */
 const staticCache = [
   './',

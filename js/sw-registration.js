@@ -15,17 +15,21 @@ window.addEventListener('load', ()=>{
     if (!navigator.serviceWorker.controller) return;
 
     if(registration.waiting){
-      toast('You are missing alot, New Version Available', 'updateServiceWorker');
-      registration.waiting.postMessage('skipWaiting');
+      serviceWorkerInstallation(registration.installing);
+      document.querySelector('#toast a').addEventListener('click', () => {
+        registration.waiting.postMessage('skipWaiting');
+      })
       return;
     }
     if (registration.installing){
-      registration.waiting.postMessage('skipWaiting');
+      document.querySelector('#toast a').addEventListener('click', () => {
+        registration.waiting.postMessage('skipWaiting');
+      })
       serviceWorkerInstallation(registration.installing);
       return;
     }
   }).catch(error => {
-    toast(`Issues Starting Working Offline'`);
+    toast(`Issues Starting Offline Server'`);
   });
 });
 const serviceWorkerInstallation = (status) =>{
