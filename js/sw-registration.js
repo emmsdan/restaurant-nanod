@@ -11,28 +11,27 @@ window.addEventListener('load', ()=>{
   }
   navigator.serviceWorker.register('serviceWorker.js')
   .then(registration => {
-      console.log(`Welcome Home. serviceWorker started at '${registration.scope}'`);
-      if (!navigator.serviceWorker.controller) return;
-      registration.addEventListener('updatefound', () => {
-        if(registration.waiting){
-          toast('New Content Available', 'updateServiceWorker');
-          registration.waiting.postMessage('skipWaiting');
-          return;
-        }
-        if (registration.installing){
-          serviceWorkerInstallation(registration.installing);
-          return;
-        }
-          return;
-      });
+    // checking if controller is true/false
+    if (!navigator.serviceWorker.controller) return;
+
+    if(registration.waiting){
+      toast('You are missing alot, New Version Available', 'updateServiceWorker');
+      registration.waiting.postMessage('skipWaiting');
+      return;
+    }
+    if (registration.installing){
+      registration.waiting.postMessage('skipWaiting');
+      serviceWorkerInstallation(registration.installing);
+      return;
+    }
   }).catch(error => {
-      console.log(`serviceWorker failed to Start, with an Error: '${error}'`);
+    toast(`Issues Starting Working Offline'`);
   });
 });
 const serviceWorkerInstallation = (status) =>{
   status.addEventListener('statechange', () => {
     if (status.state == 'installed'){
-      toast('Checking For New Content');
+      toast('New Contents are Available', 'updateServiceWorker');
     }
   })
 }
