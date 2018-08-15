@@ -16,6 +16,7 @@ const staticCache = [
   './js/dbhelper.js',
   './js/main.js',
   './js/restaurant_info.js',
+  './js/sw-registration.js',
   './restaurant.html'
 ];
 
