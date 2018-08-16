@@ -14,28 +14,23 @@ window.addEventListener('load', ()=>{
     // checking if controller is true/false
     if (!navigator.serviceWorker.controller) return;
 
+    const toastButton = document.querySelector('#toast');
     if(registration.waiting){
-      serviceWorkerInstallation(registration.installing);
-      document.querySelector('#toast a').addEventListener('click', () => {
+      toast('New Content Available', 'updateServiceWorker');
+      toastButton.addEventListener('click', () => {
         registration.waiting.postMessage('skipWaiting');
       })
       return;
     }
-    if (registration.installing){
-      document.querySelector('#toast a').addEventListener('click', () => {
+    registration.addEventListener('updatefound', () => {
+      toast('Fresh Contents Available', 'updateServiceWorker');
+      toastButton.addEventListener('click', () => {
         registration.waiting.postMessage('skipWaiting');
       })
-      serviceWorkerInstallation(registration.installing);
       return;
-    }
+    });
   }).catch(error => {
+    console.log (error)
     toast(`Issues Starting Offline Server'`);
   });
 });
-const serviceWorkerInstallation = (status) =>{
-  status.addEventListener('statechange', () => {
-    if (status.state == 'installed'){
-      toast('New Contents are Available', 'updateServiceWorker');
-    }
-  })
-}
