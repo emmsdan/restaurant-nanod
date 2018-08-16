@@ -62,19 +62,25 @@ nav {
   padding-top: 20px;
 }
 nav h1 {
+  padding: 0;
   margin: auto;
 }
 nav h1 a img{
   height: 40px;
-  padding: 0 20px;
+  padding: 0;
   margin-bottom: -13px;
   opacity: 0.5;
   filter:grayscale(100%);
 }
+
+@media only screen and (min-width: 600px) {
+  nav h1 a img{
+    padding: 0 21px;
+  }
+}
 nav h1 a {
   color: #ddd;
   font: 100 16px Helvetica;
-  letter-spacing: 5px;
   text-transform: uppercase;
 }
 nav h1 a:hover {
@@ -280,10 +286,20 @@ nav h1 a:hover img{
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 50px 20px 30px;
+  margin: auto;
+  max-width: 80%;
 }
 @media (max-width: 600px){
   #restaurant-container {
     padding: 90px 20px 30px;
+  }
+}
+@media (max-width: 700px){
+  #restaurant-container {
+    padding: 90px 20px 30px;
+  }
+  #restaurant-container, #reviews-container {
+    max-width: 100%;
   }
 }
 #reviews-container {
