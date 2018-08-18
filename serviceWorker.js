@@ -78,5 +78,5 @@ self.addEventListener('message', messageEvent => {
 });
 
 self.addEventListener('controllerchange', () => {
-    window.location.assign('./');
+  window.location.assign('./');
 });
